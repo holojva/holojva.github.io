@@ -58,6 +58,8 @@
         let clear = document.querySelector('#clear')
         clear.addEventListener('click', clea)
         
+        let mouseState = 'up'
+        
         function knopka() {
             let i = Number(input.value)
             h = i
@@ -74,8 +76,10 @@
             ctx.fillStyle = color
         }
         function mousemovKA(event) {
+            // if mouseState not 'up': { do the function } else break 
             x = event.offsetX
             y = event.offsetY
+            
             ctx.fillRect(x, y, h, w)
         
             console.log('2')
