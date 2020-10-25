@@ -49,16 +49,22 @@
             this.show = function() {
                 ctx.fillRect(posOfRect, 500, 100, 30)  
             }
+
             this.move = function(event) {
-                if (event.keyCode == 37) {
-                   ctx.clearRect(posOfRect, 500, 100, 30)
-                   posOfRect = posOfRect - 10
-                   ctx.fillRect(posOfRect, 500, 100, 30)
+                
+                if (posOfRect > 0) {
+                    if (event.keyCode == 37) {
+                        ctx.clearRect(posOfRect, 500, 100, 30)
+                        posOfRect = posOfRect - 10
+                        ctx.fillRect(posOfRect, 500, 100, 30)
+                    }
                 }
-                else if (event.keyCode == 39) {
-                    ctx.clearRect(posOfRect, 500, 100, 30)
-                    posOfRect = posOfRect + 10
-                    ctx.fillRect(posOfRect, 500, 100, 30) 
+                if (posOfRect + 100 < canvas.clientWidth) {
+                    if (event.keyCode == 39) {
+                        ctx.clearRect(posOfRect, 500, 100, 30)
+                        posOfRect = posOfRect + 10
+                        ctx.fillRect(posOfRect, 500, 100, 30) 
+                    }
                 }
             }
         }
