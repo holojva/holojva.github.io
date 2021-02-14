@@ -7,7 +7,7 @@ def saver(save) :
     print("Сохранение создано!")
 def loader(path) :
     name_of_save = input("Напишите название файла сохранения. Если ошибетесь, игра сломается! ")
-    if name_of_save in os.listdir(): 
+    if name_of_save + '.dat' in os.listdir('save'): 
         with open(f"save/{name_of_save}.dat", "rb") as lf :
             load_data = pickle.load(lf)
         return load_data
